@@ -34,3 +34,38 @@ EG             45      ...                EGYPT
 
 
 '''
+
+
+'''
+
+ESTA ES LA OTRA MANERA DE MOSTRAR EN MAYUSCULA LA COLUMNA PAISES
+EN PANDAS DATFRAME CON LA FUNCION (apply())
+
+'''
+
+# Import cars data
+import pandas as pd
+cars = pd.read_csv('cars.csv', index_col = 0)
+
+# Use .apply(str.upper)
+for lab, row in cars.iterrows() :
+    cars["COUNTRY"] = cars["country"].apply(str.upper)
+    
+print(cars)
+
+'''
+
+Y NOS DA LA MISMA SALIDA QUE QUEREMOS:
+
+     cars_per_cap      ...              COUNTRY
+US            809      ...        UNITED STATES
+AUS           731      ...            AUSTRALIA
+JPN           588      ...                JAPAN
+IN             18      ...                INDIA
+RU            200      ...               RUSSIA
+MOR            70      ...              MOROCCO
+EG             45      ...                EGYPT
+
+[7 rows x 4 columns]
+
+'''
